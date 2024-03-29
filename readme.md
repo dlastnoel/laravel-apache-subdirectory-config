@@ -93,8 +93,9 @@ APP_URL=http://yourdomain.com/app-1
 ASSET_URL='/app-1'/
 ```
 
-### firewall
-Port 80 is used as the default port. For local network access, grant permission from the server to allow all incoming connections through the port. This can be done via the server's firewall. Refer to the sample below. (Image reference to [linuxhunt](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flinuxhint.com%2Fwp-content%2Fuploads%2F2018%2F11%2F14-8.png&f=1&nofb=1&ipt=d79a9e5634d14b8171f570713e3242ba359bf13e8889c0d30579020c74219e5f&ipo=images))
+# Firewall
+Port 80 is used as the default port. For local network access, grant permission from the server to allow all incoming connections through the port. This can be done via the server's firewall. Refer to the sample below. 
+(Image reference to [linuxhunt](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flinuxhint.com%2Fwp-content%2Fuploads%2F2018%2F11%2F14-8.png&f=1&nofb=1&ipt=d79a9e5634d14b8171f570713e3242ba359bf13e8889c0d30579020c74219e5f&ipo=images))
 
 ![Linux Firewall](linux.png)
 
