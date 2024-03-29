@@ -16,7 +16,7 @@ Define your apache virtual host configuration. Below is a sample
 ```apache
 <VirtualHost *:80>
   # Server name will serve as the entry url in the browser.
-  # It can be named domain of yours or IP Address would also work.
+  # It can be named domain of yours. IP Address would also work.
   # Define as you need.
   ServerName yourdomain.com
 
@@ -52,15 +52,11 @@ Go to your laravel app directory which was used in the virtual host configuratio
 ```apache
 <IfModule mod_rewrite.c>
 
-# That was ONLY to protect you from 500 errors
-# If your server did not have mod_rewrite enabled
+# Direct all requests to /public folder
 
-RewriteEngine  On
-# NOT needed unless you're using mod_alias to redirect
-
+RewriteEngine On
 RewriteCond  %{REQUEST_URI}  !/public
 RewriteRule  ^(.*)$ public/$1 [L]
-# Direct all requests to /public folder
 
 </IfModule>
 ```
@@ -71,6 +67,7 @@ Modify the routes of your laravel app (api and web depending on what you had use
 
 ```php
 Route::prefix('/app-1')->group(function () {
+
 	Route::get('/', function() {
 		return  view('welcome');
 	});
@@ -83,4 +80,21 @@ php artisan route:clear
 php artisan route:cache
 ```
 
+
+### vite
+Modern laravel apps uses vite as asset bundling tool. Before building to production, define in the .env file of your laravel an ASSET_URL pointing to the defined alias of your app. Below is a sample.
+
+```env
+APP_NAME=laravel
+APP_ENV=production
+APP_KEY='some app key'
+APP_DEBUG=false
+APP_URL=http://yourdomain.com/app-1
+ASSET_URL='/app-1'/
+```
+
+### firewall
+Port 80 is used as the default port. For local network access, grant permission from the server to allow all incoming connections through the port. This can be done via the server's firewall. Refer to the sample below. (Image reference to [linuxhunt](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flinuxhint.com%2Fwp-content%2Fuploads%2F2018%2F11%2F14-8.png&f=1&nofb=1&ipt=d79a9e5634d14b8171f570713e3242ba359bf13e8889c0d30579020c74219e5f&ipo=images))
+
+![Firewall](firewall.png)
 
