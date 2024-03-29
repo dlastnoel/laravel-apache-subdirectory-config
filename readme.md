@@ -90,7 +90,7 @@ APP_ENV=production
 APP_KEY='some app key'
 APP_DEBUG=false
 APP_URL=http://yourdomain.com/app-1
-ASSET_URL='/app-1'/
+ASSET_URL='/app-1/'
 ```
 
 # Firewall
