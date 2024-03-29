@@ -30,7 +30,7 @@ Define your apache virtual host configuration. Below is a sample
   Alias /app-1 "www/laravel-apps/laravel-app-1/public"
 
   # Define the options for the directory being hit, particulary for the Laravel projects.
-  <Directory "c:/wamp64/www/laravel-apps/brow-trends-connect/public/">
+  <Directory "www/laravel-apps/brow-trends-connect/public/">
       # This is the current default options.
       # Change as you need. Be sure to test first
       Options +Indexes +Includes +FollowSymLinks +MultiViews
